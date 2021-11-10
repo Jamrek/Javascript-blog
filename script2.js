@@ -3,15 +3,18 @@
 function titleClickHandler(event) {
     event.preventDefault();
     const clickedElement = this;
-    clickedElement.classList.add("active");
+    clickedElement.classList.add("href");
     console.log('Link was clicked!');
-    console.log(event);
-    const articleSelector = clickedElement.getAttribute("href")
-    console.log(articleSelector);
-    const targetArticle = document.querySelector("article");
-    console.log(targetArticle);
-    targetArticle.classList.add("active");
+    // console.log(event);
+    // const articleSelector = document.querySelector("href")
+    // clickedElement.getAttribute("href");
+    const href = clickedElement.getAttribute('href');
+    const getAttibute = document.querySelector(href);
 
+    console.log(articleSelector);
+    const targetArticle = document.querySelector("href");
+    console.log(targetArticle);
+    // targetArticle.classList.add("href");
     /* remove class 'active' from all article links  */
 
     /* add class 'active' to the clicked link */
