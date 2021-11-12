@@ -4,13 +4,17 @@ function titleClickHandler(event) {
     event.preventDefault();
     const clickedElement = this;
     clickedElement.classList.add("active");
-    console.log('Link was clicked!');
-    console.log(event);
+    // console.log('Link was clicked!');
+    // console.log(event);
     const articleSelector = clickedElement.getAttribute("href")
-    console.log(articleSelector);
-    const targetArticle = document.querySelector("article");
-    console.log(targetArticle);
-    targetArticle.classList.add("active");
+    // console.log(articleSelector);
+    const targetArticle = document.querySelector("#article-1");
+    // Tu jest problem, na górze!!!
+    // console.log(targetArticle);
+    targetArticle.classList.add("post");
+    // console.log(targetArticle);
+
+
 
     /* remove class 'active' from all article links  */
 
