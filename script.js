@@ -1,18 +1,28 @@
 'use strict';
 
+// var hw = require("taskrunner");
+
 function titleClickHandler(event) {
     event.preventDefault();
     const clickedElement = this;
+    const activeArticles = document.querySelectorAll("article");
+
+    for (let activeArticle of activeArticles) {
+        activeArticle.classList.remove('active');
+    }
+
+    // for (let articleSelector of articleSelector) {
+    //     articleSelector.classList.remove('active');
+    // }
     clickedElement.classList.add("active");
-    // console.log('Link was clicked!');
-    // console.log(event);
+    console.log('Link was clicked!');
+    console.log(event);
     const articleSelector = clickedElement.getAttribute("href")
-    // console.log(articleSelector);
-    const targetArticle = document.querySelector("#article-1");
-    // Tu jest problem, na górze!!!
-    // console.log(targetArticle);
-    targetArticle.classList.add("post");
-    // console.log(targetArticle);
+    console.log(articleSelector);
+    const targetArticle = document.querySelector(articleSelector);
+    console.log(targetArticle);
+    targetArticle.classList.add("active");
+    console.log(targetArticle);
 
 
 
@@ -27,11 +37,7 @@ function titleClickHandler(event) {
     /* find the correct article using the selector (value of 'href' attribute) */
 
     /* add class 'active' to the correct article */
-    const activeArticles = document.querySelectorAll("article");
 
-    for (let activeArticle of activeArticles) {
-        activeArticle.classList.remove('active');
-    }
 
     //     ctiveLink to pojedynczy link, spośród wyszukanych linków z klasą active,
     // .classList to "biblioteka", zawierająca informacje i funkcje dotyczące klas tego elementu,
@@ -50,3 +56,4 @@ const links = document.querySelectorAll('.titles a');
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
 }
+// var hw = require("taskrunner");
