@@ -35,12 +35,6 @@ function titleClickHandler(event) {
     // toggle - przełączanie klasy, jeśli element nie ma klasy to ją doda, a jeżeli ma klase to ją usunie
     // contains - sprawdzenie, czy element posiada daną klase
 }
-
-const links = document.querySelectorAll('.titles a');
-
-for (let link of links) {
-    link.addEventListener('click', titleClickHandler);
-}
 // var hw = require("taskrunner");
 
 
@@ -48,14 +42,26 @@ const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
 
-
-
-
-
-
 function generateTitleLinks() {
-    const titleList = document.querySelector(optArticleSelector);
-    titleList.innerHTML = '';
+    const titleList = document.querySelector(optTitleListSelector);
+    titleList.innerHTML = "";
+    const articles = document.querySelectorAll(optArticleSelector);
+    let html = '';
+
+    for (let article of articles) {
+        const articleId = article.getAttribute('id');
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+        console.log(linkHTML);
+        titleList.innerHTML = titleList.innerHTML + linkHTML;
+
+    }
+
 
 }
 generateTitleLinks();
+const links = document.querySelectorAll('.titles a');
+
+for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+}
