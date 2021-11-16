@@ -48,21 +48,14 @@ const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
 
-// const articleId = getAttribute('id');
 
 
-// let html = '';
+
+
 
 function generateTitleLinks() {
     const titleList = document.querySelector(optArticleSelector);
-    titleList.classList.remove('titles');
     titleList.innerHTML = '';
-    const articles = document.querySelectorAll(optArticleSelector);
-    let html = '';
-    // const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-    for (let article of articles) {
-        const articleId = document.querySelector(optArticleSelector);
 
-    }
 }
 generateTitleLinks();
